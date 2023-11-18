@@ -54,7 +54,7 @@ def inference(args):
     # get the RAFT model
     model = RAFT(args)
     # load pretrained weights
-    pretrained_weights = torch.load(args.model)
+    pretrained_weights = torch.load(args.model, map_location=torch.device('cpu'))
 
     save = args.save
     if save:
