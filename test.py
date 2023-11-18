@@ -23,7 +23,7 @@ def frame_preprocess(frame, device):
 def vizualize_flow(img, flo, save, counter):
     # permute the channels and change device is necessary
     img = img[0].permute(1, 2, 0).cpu().numpy()
-    flo = flo[0].permute(1, 2, 0).cpu().numpy()
+    flo = flo[0].detach().permute(1, 2, 0).cpu().numpy()
 
     # map flow to rgb image
     flo = flow_viz.flow_to_image(flo)
