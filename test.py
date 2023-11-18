@@ -31,12 +31,7 @@ def vizualize_flow(img, flo, save, counter):
 
     # concatenate, save and show images
     img_flo = np.concatenate([img, flo], axis=0)
-    if save:
-        cv2.imwrite(f"demo_frames/frame_{str(counter)}.jpg", img_flo)
-    cv2.imshow("Optical Flow", img_flo / 255.0)
-    k = cv2.waitKey(25) & 0xFF
-    if k == 27:
-        return False
+    cv2.imwrite(f"optical_flow_result.jpg", img_flo)
     return True
 
 
